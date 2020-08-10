@@ -1,0 +1,465 @@
+#set DATE_FORMAT = "%Y-%m-%dT%H:%M:%S%z"
+#encoding UTF-8
+{
+  "title": "Aktuelle Werte",
+  "location": "$station.location",
+  "time": "$current.dateTime.format($DATE_FORMAT)",
+  "lat": "$station.latitude[0]&deg; $station.latitude[1]' $station.latitude[2]",
+  "lon": "$station.longitude[0]&deg; $station.longitude[1]' $station.longitude[2]",
+  "alt": "$station.altitude",
+  "hardware": "$station.hardware",
+  "uptime": "$station.uptime",
+  "serverUptime": "$station.os_uptime",
+  "weewxVersion": "$station.version",
+  "stats": [
+    {
+      "name": "inTemp",
+      "label": "$obs.label.inTemp",
+      "unit": "$unit.label.inTemp",
+      "type": "TEMP_IN",
+      "currentValue": "$current.inTemp.format(add_label=False)",
+      "maxValue": "$day.inTemp.max.format(add_label=False)",
+      "maxTime": "$day.inTemp.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.inTemp.min.format(add_label=False)",
+      "minTime": "$day.inTemp.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.inTemp.avg.format(add_label=False)"
+    },
+    {
+      "name": "outTemp",
+      "label": "$obs.label.outTemp",
+      "unit": "$unit.label.outTemp",
+      "type": "TEMP_OUT",
+      "currentValue": "$current.outTemp.format(add_label=False)",
+      "maxValue": "$day.outTemp.max.format(add_label=False)",
+      "maxTime": "$day.outTemp.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.outTemp.min.format(add_label=False)",
+      "minTime": "$day.outTemp.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.outTemp.avg.format(add_label=False)"
+    },
+    {
+      "name": "windchill",
+      "label": "$obs.label.windchill",
+      "unit": "$unit.label.windchill",
+      "type": "WIND_CHILL",
+      "currentValue": "$current.windchill.format(add_label=False)",
+      "minValue": "$day.windchill.min.format(add_label=False)",
+      "minTime": "$day.windchill.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.windchill.avg.format(add_label=False)"
+    },
+    {
+      "name": "windSpeed",
+      "label": "$obs.label.windSpeed",
+      "unit": "$unit.label.windSpeed",
+      "type": "WIND_SPEED",
+      "currentValue": "$current.windSpeed.format(add_label=False)",
+      "maxValue": "$day.wind.max.format(add_label=False)",
+      "maxTime": "$day.wind.maxtime.format($DATE_FORMAT)",
+      "avgDay": "$day.wind.avg.format(add_label=False)",
+      "rms": "$day.wind.rms.format(add_label=False)",
+      "additional": [
+        {
+          "name": "windVecAvg",
+          "value": "$day.wind.vecavg"
+        },
+        {
+          "name": "windVecDir",
+          "value": "$day.wind.vecdir"
+        }
+      ]
+    },
+    {
+      "name": "windDir",
+      "label": "$obs.label.windDir",
+      "unit": "$unit.label.windDir",
+      "type": "WIND_DIR",
+      "currentValue": "$current.windDir.format(add_label=False)",
+      "avgDay": "$day.windDir.avg.format(add_label=False)"
+    },
+    {
+      "name": "windDirText",
+      "label": "$obs.label.wind",
+      "type": "WIND_DIR_TEXT",
+      "currentValue": "$current.windDir.ordinal_compass"
+    },
+    {
+      "name": "windGust",
+      "label": "$obs.label.windGust",
+      "unit": "$unit.label.windGust",
+      "type": "WIND_GUST",
+      "currentValue": "$current.windGust.format(add_label=False)",
+      "avgDay": "$day.windGust.avg.format(add_label=False)"
+    },
+    {
+      "name": "windGustDir",
+      "label": "$obs.label.windGustDir",
+      "unit": "$unit.label.windGustDir",
+      "type": "WIND_GUST_DIR",
+      "currentValue": "$current.windGustDir.format(add_label=False)",
+      "maxValue": "$day.wind.gustdir"
+    },
+    {
+      "name": "heatindex",
+      "label": "$obs.label.heatindex",
+      "unit": "$unit.label.heatindex",
+      "type": "HEAT_INDEX",
+      "currentValue": "$current.heatindex.format(add_label=False)",
+      "maxValue": "$day.heatindex.max.format(add_label=False)",
+      "maxTime": "$day.heatindex.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.heatindex.min.format(add_label=False)",
+      "minTime": "$day.heatindex.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.heatindex.avg.format(add_label=False)"
+    },
+    {
+      "name": "dewpoint",
+      "label": "$obs.label.dewpoint",
+      "unit": "$unit.label.dewpoint",
+      "type": "DEWPOINT",
+      "currentValue": "$current.dewpoint",
+      "maxValue": "$day.dewpoint.max.format(add_label=False)",
+      "maxTime": "$day.dewpoint.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.dewpoint.min.format(add_label=False)",
+      "minTime": "$day.dewpoint.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.dewpoint.avg.format(add_label=False)"
+    },
+    {
+      "name": "outHumidity",
+      "label": "$obs.label.outHumidity",
+      "unit": "$unit.label.outHumidity",
+      "type": "HUMIDITY_OUT",
+      "currentValue": "$current.outHumidity",
+      "maxValue": "$day.outHumidity.max.format(add_label=False)",
+      "maxTime": "$day.outHumidity.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.outHumidity.min.format(add_label=False)",
+      "minTime": "$day.outHumidity.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.outHumidity.avg.format(add_label=False)"
+    },
+    {
+      "name": "inHumidity",
+      "label": "$obs.label.inHumidity",
+      "unit": "$unit.label.inHumidity",
+      "type": "HUMIDITY_IN",
+      "currentValue": "$current.inHumidity",
+      "maxValue": "$day.inHumidity.max.format(add_label=False)",
+      "maxTime": "$day.inHumidity.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.inHumidity.min.format(add_label=False)",
+      "minTime": "$day.inHumidity.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.inHumidity.avg.format(add_label=False)"
+    },
+    {
+      "name": "barometer",
+      "label": "$obs.label.barometer",
+      "unit": "$unit.label.barometer",
+      "type": "BAROMETER",
+      "currentValue": "$current.barometer.format(add_label=False)",
+      "maxValue": "$day.barometer.max.format(add_label=False)",
+      "maxTime": "$day.barometer.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.barometer.min.format(add_label=False)",
+      "minTime": "$day.barometer.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.barometer.avg.format(add_label=False)"
+    },
+    {
+      "name": "barometerTrendDelta",
+      "label": "$obs.label.time_delta",
+      "unit": "$unit.label.barometer",
+      "type": "BAROMETER_TREND",
+      "currentValue": "$trend.barometer.format(add_label=False)",
+      "timePeriod": "$trend.time_delta.hour.format('%.0f')"
+    },
+    {
+      "name": "rainRate",
+      "label": "$obs.label.rainRate",
+      "unit": "$unit.label.rainRate",
+      "type": "RAIN_RATE",
+      "currentValue": "$current.rainRate.format(add_label=False)",
+      "sumDay": "$day.rain.sum.format(add_label=False)",
+      "maxValue": "$day.rainRate.max.format(add_label=False)",
+      "maxTime": "$day.rainRate.maxtime.format($DATE_FORMAT)",
+      "avgDay": "$day.rainRate.avg.format(add_label=False)"
+    }
+#if $day.extraTemp1.has_data
+    ,
+    {
+      "name": "extraTemp1",
+      "label": "$obs.label.extraTemp1",
+      "unit": "$unit.label.extraTemp1",
+      "type": "TEMP_IN",
+      "currentValue": "$current.extraTemp1.format(add_label=False)",
+      "maxValue": "$day.extraTemp1.max.format(add_label=False)",
+      "maxTime": "$day.extraTemp1.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraTemp1.min.format(add_label=False)",
+      "minTime": "$day.extraTemp1.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraTemp1.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraTemp2.has_data
+    ,
+    {
+      "name": "extraTemp2",
+      "label": "$obs.label.extraTemp2",
+      "unit": "$unit.label.extraTemp2",
+      "type": "TEMP_IN",
+      "currentValue": "$current.extraTemp2.format(add_label=False)",
+      "maxValue": "$day.extraTemp1.max.format(add_label=False)",
+      "maxTime": "$day.extraTemp1.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraTemp1.min.format(add_label=False)",
+      "minTime": "$day.extraTemp1.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraTemp1.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraTemp3.has_data
+    ,
+    {
+      "name": "extraTemp3",
+      "label": "$obs.label.extraTemp3",
+      "unit": "$unit.label.extraTemp3",
+      "type": "TEMP_IN",
+      "currentValue": "$current.extraTemp3.format(add_label=False)",
+      "maxValue": "$day.extraTemp3.max.format(add_label=False)",
+      "maxTime": "$day.extraTemp3.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraTemp3.min.format(add_label=False)",
+      "minTime": "$day.extraTemp3.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraTemp3.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraTemp4.has_data
+    ,
+    {
+      "name": "extraTemp4",
+      "label": "$obs.label.extraTemp4",
+      "unit": "$unit.label.extraTemp4",
+      "type": "TEMP_IN",
+      "currentValue": "$current.extraTemp4.format(add_label=False)",
+      "maxValue": "$day.extraTemp4.max.format(add_label=False)",
+      "maxTime": "$day.extraTemp4.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraTemp4.min.format(add_label=False)",
+      "minTime": "$day.extraTemp4.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraTemp4.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraTemp5.has_data
+    ,
+    {
+      "name": "extraTemp5",
+      "label": "$obs.label.extraTemp5",
+      "unit": "$unit.label.extraTemp5",
+      "type": "TEMP_IN",
+      "currentValue": "$current.extraTemp5.format(add_label=False)",
+      "maxValue": "$day.extraTemp5.max.format(add_label=False)",
+      "maxTime": "$day.extraTemp5.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraTemp5.min.format(add_label=False)",
+      "minTime": "$day.extraTemp5.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraTemp5.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraTemp6.has_data
+    ,
+    {
+      "name": "extraTemp6",
+      "label": "$obs.label.extraTemp6",
+      "unit": "$unit.label.extraTemp6",
+      "type": "TEMP_IN",
+      "currentValue": "$current.extraTemp6.format(add_label=False)",
+      "maxValue": "$day.extraTemp6.max.format(add_label=False)",
+      "maxTime": "$day.extraTemp6.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraTemp6.min.format(add_label=False)",
+      "minTime": "$day.extraTemp6.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraTemp6.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraTemp7.has_data
+    ,
+    {
+      "name": "extraTemp7",
+      "label": "$obs.label.extraTemp7",
+      "unit": "$unit.label.extraTemp7",
+      "type": "TEMP_IN",
+      "currentValue": "$current.extraTemp7",
+      "maxValue": "$day.extraTemp7.max.format(add_label=False)",
+      "maxTime": "$day.extraTemp7.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraTemp7.min.format(add_label=False)",
+      "minTime": "$day.extraTemp7.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraTemp7.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraTemp8.has_data
+    ,
+    {
+      "name": "extraTemp8",
+      "label": "$obs.label.extraTemp8",
+      "unit": "$unit.label.extraTemp8",
+      "type": "TEMP_IN",
+      "currentValue": "$current.extraTemp8.format(add_label=False)",
+      "maxValue": "$day.extraTemp8.max.format(add_label=False)",
+      "maxTime": "$day.extraTemp8.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraTemp8.min.format(add_label=False)",
+      "minTime": "$day.extraTemp8.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraTemp8.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraHumid1.has_data
+    ,
+    {
+      "name": "extraHumid1",
+      "label": "$obs.label.extraHumid1",
+      "unit": "$unit.label.extraHumid1",
+      "type": "HUMIDITY_IN",
+      "currentValue": "$current.extraHumid1.format(add_label=False)",
+      "maxValue": "$day.extraHumid1.max.format(add_label=False)",
+      "maxTime": "$day.extraHumid1.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraHumid1.min.format(add_label=False)",
+      "minTime": "$day.extraHumid1.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraHumid1.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraHumid2.has_data
+    ,
+    {
+      "name": "extraHumid2",
+      "label": "$obs.label.extraHumid2",
+      "unit": "$unit.label.extraHumid2",
+      "type": "HUMIDITY_IN",
+      "currentValue": "$current.extraHumid2.format(add_label=False)",
+      "maxValue": "$day.extraHumid2.max.format(add_label=False)",
+      "maxTime": "$day.extraHumid2.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraHumid2.min.format(add_label=False)",
+      "minTime": "$day.extraHumid2.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraHumid2.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraHumid3.has_data
+    ,
+    {
+      "name": "extraHumid3",
+      "label": "$obs.label.extraHumid3",
+      "unit": "$unit.label.extraHumid3",
+      "type": "HUMIDITY_IN",
+      "currentValue": "$current.extraHumid3",
+      "maxValue": "$day.extraHumid3.max.format(add_label=False)",
+      "maxTime": "$day.extraHumid3.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraHumid3.min.format(add_label=False)",
+      "minTime": "$day.extraHumid3.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraHumid3.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraHumid4.has_data
+    ,
+    {
+      "name": "extraHumid4",
+      "label": "$obs.label.extraHumid4",
+      "unit": "$unit.label.extraHumid4",
+      "type": "HUMIDITY_IN",
+      "currentValue": "$current.extraHumid4.format(add_label=False)",
+      "maxValue": "$day.extraHumid4.max.format(add_label=False)",
+      "maxTime": "$day.extraHumid4.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraHumid4.min.format(add_label=False)",
+      "minTime": "$day.extraHumid4.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraHumid4.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraHumid5.has_data
+    ,
+    {
+      "name": "extraHumid5",
+      "label": "$obs.label.extraHumid5",
+      "unit": "$unit.label.extraHumid5",
+      "type": "HUMIDITY_IN",
+      "currentValue": "$current.extraHumid5.format(add_label=False)",
+      "maxValue": "$day.extraHumid5.max.format(add_label=False)",
+      "maxTime": "$day.extraHumid5.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraHumid5.min.format(add_label=False)",
+      "minTime": "$day.extraHumid5.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraHumid5.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraHumid6.has_data
+    ,
+    {
+      "name": "extraHumid6",
+      "label": "$obs.label.extraHumid6",
+      "unit": "$unit.label.extraHumid6",
+      "type": "HUMIDITY_IN",
+      "currentValue": "$current.extraHumid6.format(add_label=False)",
+      "maxValue": "$day.extraHumid6.max.format(add_label=False)",
+      "maxTime": "$day.extraHumid6.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraHumid6.min.format(add_label=False)",
+      "minTime": "$day.extraHumid6.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraHumid6.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraHumid7.has_data
+    ,
+    {
+      "name": "extraHumid7",
+      "label": "$obs.label.extraHumid7",
+      "unit": "$unit.label.extraHumid7",
+      "type": "HUMIDITY_IN",
+      "currentValue": "$current.extraHumid7.format(add_label=False)",
+      "maxValue": "$day.extraHumid7.max.format(add_label=False)",
+      "maxTime": "$day.extraHumid7.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraHumid7.min.format(add_label=False)",
+      "minTime": "$day.extraHumid7.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraHumid7.avg.format(add_label=False)"
+    }
+#end if
+#if $day.extraHumid8.has_data
+    ,
+    {
+      "name": "extraHumid8",
+      "label": "$obs.label.extraHumid8",
+      "unit": "$unit.label.extraHumid8",
+      "type": "HUMIDITY_IN",
+      "currentValue": "$current.extraHumid8.format(add_label=False)",
+      "maxValue": "$day.extraHumid8.max.format(add_label=False)",
+      "maxTime": "$day.extraHumid8.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.extraHumid8.min.format(add_label=False)",
+      "minTime": "$day.extraHumid8.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.extraHumid8.avg.format(add_label=False)"
+    }
+#end if
+#if $day.UV.has_data
+    ,
+    {
+      "name": "UV",
+      "label": "$obs.label.UV",
+      "unit": "$unit.label.UV",
+      "type": "UV",
+      "currentValue": "$current.UV.format(add_label=False)",
+      "maxValue": "$day.UV.max.format(add_label=False)",
+      "maxTime": "$day.UV.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.UV.min.format(add_label=False)",
+      "minTime": "$day.UV.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.UV.avg.format(add_label=False)"
+    }
+#end if
+#if $day.ET.has_data
+    ,
+    {
+      "name": "ET",
+      "label": "$obs.label.ET",
+      "unit": "$unit.label.ET",
+      "type": "ET",
+      "currentValue": "$current.ET.format(add_label=False)",
+      "maxValue": "$day.ET.max.format(add_label=False)",
+      "maxTime": "$day.ET.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.ET.min.format(add_label=False)",
+      "minTime": "$day.ET.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.ET.avg.format(add_label=False)"
+    }
+#end if
+#if $day.radiation.has_data
+    ,
+    {
+      "name": "solarRadiation",
+      "label": "$obs.label.radiation",
+      "unit": "$unit.label.radiation",
+      "type": "SOLAR_RADIATION",
+      "currentValue": "$current.radiation.format(add_label=False)",
+      "maxValue": "$day.radiation.max.format(add_label=False)",
+      "maxTime": "$day.radiation.maxtime.format($DATE_FORMAT)",
+      "minValue": "$day.radiation.min.format(add_label=False)",
+      "minTime": "$day.radiation.mintime.format($DATE_FORMAT)",
+      "avgDay": "$day.radiation.avg.format(add_label=False)"
+    }
+#end if
+  ]
+}
