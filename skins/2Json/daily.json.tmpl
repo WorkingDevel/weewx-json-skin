@@ -1,7 +1,7 @@
+#errorCatcher Echo
 #set DATE_FORMAT = "%Y-%m-%dT%H:%M:%S%z"
 #encoding UTF-8
 {
-  "title": "Aktuelle Werte",
   "location": "$station.location",
   "time": "$current.dateTime.format($DATE_FORMAT)",
   "lat": "$station.latitude[0]&deg; $station.latitude[1]' $station.latitude[2]",
@@ -114,7 +114,7 @@
       "label": "$obs.label.dewpoint",
       "unit": "$unit.label.dewpoint",
       "type": "DEWPOINT",
-      "currentValue": "$current.dewpoint",
+      "currentValue": "$current.dewpoint.format(add_label=False)",
       "maxValue": "$day.dewpoint.max.format(add_label=False)",
       "maxTime": "$day.dewpoint.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.dewpoint.min.format(add_label=False)",
@@ -126,7 +126,7 @@
       "label": "$obs.label.outHumidity",
       "unit": "$unit.label.outHumidity",
       "type": "HUMIDITY_OUT",
-      "currentValue": "$current.outHumidity",
+      "currentValue": "$current.outHumidity.format(add_label=False)",
       "maxValue": "$day.outHumidity.max.format(add_label=False)",
       "maxTime": "$day.outHumidity.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.outHumidity.min.format(add_label=False)",
@@ -138,7 +138,7 @@
       "label": "$obs.label.inHumidity",
       "unit": "$unit.label.inHumidity",
       "type": "HUMIDITY_IN",
-      "currentValue": "$current.inHumidity",
+      "currentValue": "$current.inHumidity.format(add_label=False)",
       "maxValue": "$day.inHumidity.max.format(add_label=False)",
       "maxTime": "$day.inHumidity.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.inHumidity.min.format(add_label=False)",
