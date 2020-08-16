@@ -12,7 +12,7 @@ class BasicInstaller(ExtensionInstaller):
     def __init__(self):
         super(BasicInstaller, self).__init__(
             version = '0.1.0',
-            name = '2json-skin',
+            name = '2Json',
             description = 'JSON suitable for consumption from an SPA.',
             author = "Christoph Graupner",
             author_email = "ch.graupner@workingdeveloper.net",
