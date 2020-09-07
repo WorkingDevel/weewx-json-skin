@@ -22,7 +22,13 @@
       "maxTime": "$day.inTemp.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.inTemp.min.format(add_label=False)",
       "minTime": "$day.inTemp.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.inTemp.avg.format(add_label=False)"
+      "avgDay": "$day.inTemp.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "daytempin.png" },
+        "graph_weekly": { "href": "weektempin.png" },
+        "graph_monthly": { "href": "monthtempin.png" },
+        "graph_yearly": { "href": "yeartempin.png" }
+      }
     },
     {
       "name": "outTemp",
@@ -34,7 +40,13 @@
       "maxTime": "$day.outTemp.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.outTemp.min.format(add_label=False)",
       "minTime": "$day.outTemp.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.outTemp.avg.format(add_label=False)"
+      "avgDay": "$day.outTemp.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "daytempout.png" },
+        "graph_weekly": { "href": "weektempout.png" },
+        "graph_monthly": { "href": "monthtempout.png" },
+        "graph_yearly": { "href": "yeartempout.png" }
+      }
     },
     {
       "name": "windchill",
@@ -131,7 +143,13 @@
       "maxTime": "$day.outHumidity.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.outHumidity.min.format(add_label=False)",
       "minTime": "$day.outHumidity.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.outHumidity.avg.format(add_label=False)"
+      "avgDay": "$day.outHumidity.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "dayhumout.png" },
+        "graph_weekly": { "href": "weekhumout.png" },
+        "graph_monthly": { "href": "monthhumout.png" },
+        "graph_yearly": { "href": "yearhumout.png" }
+      }
     },
     {
       "name": "inHumidity",
@@ -143,7 +161,13 @@
       "maxTime": "$day.inHumidity.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.inHumidity.min.format(add_label=False)",
       "minTime": "$day.inHumidity.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.inHumidity.avg.format(add_label=False)"
+      "avgDay": "$day.inHumidity.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "dayhumin.png" },
+        "graph_weekly": { "href": "weekhumin.png" },
+        "graph_monthly": { "href": "monthhumin.png" },
+        "graph_yearly": { "href": "yearhumin.png" }
+      }
     },
     {
       "name": "barometer",
@@ -174,7 +198,13 @@
       "sumDay": "$day.rain.sum.format(add_label=False)",
       "maxValue": "$day.rainRate.max.format(add_label=False)",
       "maxTime": "$day.rainRate.maxtime.format($DATE_FORMAT)",
-      "avgDay": "$day.rainRate.avg.format(add_label=False)"
+      "avgDay": "$day.rainRate.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "dayrain.png" },
+        "graph_weekly": { "href": "weekrain.png" },
+        "graph_monthly": { "href": "monthrain.png" },
+        "graph_yearly": { "href": "yearrain.png" }
+      }
     }
 #if $day.extraTemp1.has_data
     ,
@@ -188,7 +218,13 @@
       "maxTime": "$day.extraTemp1.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraTemp1.min.format(add_label=False)",
       "minTime": "$day.extraTemp1.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraTemp1.avg.format(add_label=False)"
+      "avgDay": "$day.extraTemp1.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "daytemp.png" },
+        "graph_weekly": { "href": "weektemp.png" },
+        "graph_monthly": { "href": "monthtemp.png" },
+        "graph_yearly": { "href": "yeartemp.png" }
+      }
     }
 #end if
 #if $day.extraTemp2.has_data
@@ -203,7 +239,13 @@
       "maxTime": "$day.extraTemp1.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraTemp1.min.format(add_label=False)",
       "minTime": "$day.extraTemp1.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraTemp1.avg.format(add_label=False)"
+      "avgDay": "$day.extraTemp1.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "daytemp.png" },
+        "graph_weekly": { "href": "weektemp.png" },
+        "graph_monthly": { "href": "monthtemp.png" },
+        "graph_yearly": { "href": "yeartemp.png" }
+      }
     }
 #end if
 #if $day.extraTemp3.has_data
@@ -218,7 +260,13 @@
       "maxTime": "$day.extraTemp3.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraTemp3.min.format(add_label=False)",
       "minTime": "$day.extraTemp3.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraTemp3.avg.format(add_label=False)"
+      "avgDay": "$day.extraTemp3.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "daytemp.png" },
+        "graph_weekly": { "href": "weektemp.png" },
+        "graph_monthly": { "href": "monthtemp.png" },
+        "graph_yearly": { "href": "yeartemp.png" }
+      }
     }
 #end if
 #if $day.extraTemp4.has_data
@@ -233,7 +281,13 @@
       "maxTime": "$day.extraTemp4.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraTemp4.min.format(add_label=False)",
       "minTime": "$day.extraTemp4.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraTemp4.avg.format(add_label=False)"
+      "avgDay": "$day.extraTemp4.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "daytemp.png" },
+        "graph_weekly": { "href": "weektemp.png" },
+        "graph_monthly": { "href": "monthtemp.png" },
+        "graph_yearly": { "href": "yeartemp.png" }
+      }
     }
 #end if
 #if $day.extraTemp5.has_data
@@ -248,7 +302,13 @@
       "maxTime": "$day.extraTemp5.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraTemp5.min.format(add_label=False)",
       "minTime": "$day.extraTemp5.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraTemp5.avg.format(add_label=False)"
+      "avgDay": "$day.extraTemp5.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "daytemp.png" },
+        "graph_weekly": { "href": "weektemp.png" },
+        "graph_monthly": { "href": "monthtemp.png" },
+        "graph_yearly": { "href": "yeartemp.png" }
+      }
     }
 #end if
 #if $day.extraTemp6.has_data
@@ -263,7 +323,13 @@
       "maxTime": "$day.extraTemp6.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraTemp6.min.format(add_label=False)",
       "minTime": "$day.extraTemp6.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraTemp6.avg.format(add_label=False)"
+      "avgDay": "$day.extraTemp6.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "daytemp.png" },
+        "graph_weekly": { "href": "weektemp.png" },
+        "graph_monthly": { "href": "monthtemp.png" },
+        "graph_yearly": { "href": "yeartemp.png" }
+      }
     }
 #end if
 #if $day.extraTemp7.has_data
@@ -278,7 +344,13 @@
       "maxTime": "$day.extraTemp7.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraTemp7.min.format(add_label=False)",
       "minTime": "$day.extraTemp7.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraTemp7.avg.format(add_label=False)"
+      "avgDay": "$day.extraTemp7.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "daytemp.png" },
+        "graph_weekly": { "href": "weektemp.png" },
+        "graph_monthly": { "href": "monthtemp.png" },
+        "graph_yearly": { "href": "yeartemp.png" }
+      }
     }
 #end if
 #if $day.extraTemp8.has_data
@@ -293,7 +365,13 @@
       "maxTime": "$day.extraTemp8.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraTemp8.min.format(add_label=False)",
       "minTime": "$day.extraTemp8.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraTemp8.avg.format(add_label=False)"
+      "avgDay": "$day.extraTemp8.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "daytemp.png" },
+        "graph_weekly": { "href": "weektemp.png" },
+        "graph_monthly": { "href": "monthtemp.png" },
+        "graph_yearly": { "href": "yeartemp.png" }
+      }
     }
 #end if
 #if $day.extraHumid1.has_data
@@ -308,7 +386,13 @@
       "maxTime": "$day.extraHumid1.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraHumid1.min.format(add_label=False)",
       "minTime": "$day.extraHumid1.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraHumid1.avg.format(add_label=False)"
+      "avgDay": "$day.extraHumid1.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "dayhum.png" },
+        "graph_weekly": { "href": "weekhum.png" },
+        "graph_monthly": { "href": "monthhum.png" },
+        "graph_yearly": { "href": "yearhum.png" }
+      }
     }
 #end if
 #if $day.extraHumid2.has_data
@@ -323,7 +407,13 @@
       "maxTime": "$day.extraHumid2.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraHumid2.min.format(add_label=False)",
       "minTime": "$day.extraHumid2.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraHumid2.avg.format(add_label=False)"
+      "avgDay": "$day.extraHumid2.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "dayhum.png" },
+        "graph_weekly": { "href": "weekhum.png" },
+        "graph_monthly": { "href": "monthhum.png" },
+        "graph_yearly": { "href": "yearhum.png" }
+      }
     }
 #end if
 #if $day.extraHumid3.has_data
@@ -338,7 +428,13 @@
       "maxTime": "$day.extraHumid3.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraHumid3.min.format(add_label=False)",
       "minTime": "$day.extraHumid3.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraHumid3.avg.format(add_label=False)"
+      "avgDay": "$day.extraHumid3.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "dayhum.png" },
+        "graph_weekly": { "href": "weekhum.png" },
+        "graph_monthly": { "href": "monthhum.png" },
+        "graph_yearly": { "href": "yearhum.png" }
+      }
     }
 #end if
 #if $day.extraHumid4.has_data
@@ -353,7 +449,13 @@
       "maxTime": "$day.extraHumid4.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraHumid4.min.format(add_label=False)",
       "minTime": "$day.extraHumid4.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraHumid4.avg.format(add_label=False)"
+      "avgDay": "$day.extraHumid4.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "dayhum.png" },
+        "graph_weekly": { "href": "weekhum.png" },
+        "graph_monthly": { "href": "monthhum.png" },
+        "graph_yearly": { "href": "yearhum.png" }
+      }
     }
 #end if
 #if $day.extraHumid5.has_data
@@ -368,7 +470,13 @@
       "maxTime": "$day.extraHumid5.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraHumid5.min.format(add_label=False)",
       "minTime": "$day.extraHumid5.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraHumid5.avg.format(add_label=False)"
+      "avgDay": "$day.extraHumid5.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "dayhum.png" },
+        "graph_weekly": { "href": "weekhum.png" },
+        "graph_monthly": { "href": "monthhum.png" },
+        "graph_yearly": { "href": "yearhum.png" }
+      }
     }
 #end if
 #if $day.extraHumid6.has_data
@@ -383,7 +491,13 @@
       "maxTime": "$day.extraHumid6.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraHumid6.min.format(add_label=False)",
       "minTime": "$day.extraHumid6.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraHumid6.avg.format(add_label=False)"
+      "avgDay": "$day.extraHumid6.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "dayhum.png" },
+        "graph_weekly": { "href": "weekhum.png" },
+        "graph_monthly": { "href": "monthhum.png" },
+        "graph_yearly": { "href": "yearhum.png" }
+      }
     }
 #end if
 #if $day.extraHumid7.has_data
@@ -398,7 +512,13 @@
       "maxTime": "$day.extraHumid7.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraHumid7.min.format(add_label=False)",
       "minTime": "$day.extraHumid7.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraHumid7.avg.format(add_label=False)"
+      "avgDay": "$day.extraHumid7.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "dayhum.png" },
+        "graph_weekly": { "href": "weekhum.png" },
+        "graph_monthly": { "href": "monthhum.png" },
+        "graph_yearly": { "href": "yearhum.png" }
+      }
     }
 #end if
 #if $day.extraHumid8.has_data
@@ -413,7 +533,13 @@
       "maxTime": "$day.extraHumid8.maxtime.format($DATE_FORMAT)",
       "minValue": "$day.extraHumid8.min.format(add_label=False)",
       "minTime": "$day.extraHumid8.mintime.format($DATE_FORMAT)",
-      "avgDay": "$day.extraHumid8.avg.format(add_label=False)"
+      "avgDay": "$day.extraHumid8.avg.format(add_label=False)",
+      "_links": {
+        "graph_daily": { "href": "dayhum.png" },
+        "graph_weekly": { "href": "weekhum.png" },
+        "graph_monthly": { "href": "monthhum.png" },
+        "graph_yearly": { "href": "yearhum.png" }
+      }
     }
 #end if
 #if $day.UV.has_data
